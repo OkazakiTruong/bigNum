@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.root {
+  max-width: 1250px;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: center;
+}

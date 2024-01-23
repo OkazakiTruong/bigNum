@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.root {
+  max-width: 1250px;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: center;
+}
+.nav {
+  background-color: aquamarine;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  gap: 20px;
+}

@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.root {
+  max-width: 1250px;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+header nav {
+  display: flex;
+}
