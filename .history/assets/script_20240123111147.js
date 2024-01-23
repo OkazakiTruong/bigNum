@@ -58,7 +58,7 @@ const mul = (numArr1, numArr2) => {
   }
   result = reverse(result);
   result = removeZeroFromBegin(result);
-  resultEle.value = result.join();
+  resultEle.value = result.join(0);
 };
 
 btnAdd.addEventListener("click", () => {

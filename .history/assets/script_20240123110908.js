@@ -4,7 +4,7 @@ const btnMul = document.querySelector(".btn-mul");
 const btnDiv = document.querySelector(".btn-div");
 const number1 = document.querySelector(".number1");
 const number2 = document.querySelector(".number2");
-const resultEle = document.querySelector(".result");
+const result = document.querySelector(".result");
 
 // return arr from string
 const numInput = (number) => {
@@ -58,7 +58,7 @@ const mul = (numArr1, numArr2) => {
   }
   result = reverse(result);
   result = removeZeroFromBegin(result);
-  resultEle.value = result.join();
+  console.log(result);
 };
 
 btnAdd.addEventListener("click", () => {
