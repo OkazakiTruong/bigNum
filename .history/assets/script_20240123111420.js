@@ -24,7 +24,7 @@ const reverse = (arr) => {
 const addZeroToBegin = (length) => {
   const arr = [];
   for (let i = 0; i < length; i++) {
-    arr.unshift(0);
+    arr.unshift();
   }
   return arr;
 };
@@ -58,7 +58,7 @@ const mul = (numArr1, numArr2) => {
   }
   result = reverse(result);
   result = removeZeroFromBegin(result);
-  resultEle.value = result.join("");
+  resultEle.value = result.join();
 };
 
 btnAdd.addEventListener("click", () => {
