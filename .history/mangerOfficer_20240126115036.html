@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý cán bộ</title>
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/managerStyle.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+  </head>
+  <body>
+    <div class="root">
+      <header class="header">
+        <nav class="nav">
+          <a href="./index.html">TÍNH SỐ NGUYÊN LỚN</a>
+          <a class="active" href="./mangerOfficer.html">QUẢN LÝ NHÂN SỰ</a>
+        </nav>
+      </header>
+      <main>
+        <label for="excel-input">Nhập file Excel của bạn</label>
+        <input type="file" class="file-input" id="excel-input" />
+        <table class="table-officer">
+          <tr>
+            <th>Stt</th>
+            <th>Họ và tên</th>
+            <th>Chức vụ</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>
+            <th>Lương</th>
+            <th>Sửa</th>
+            <th>Xóa</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Bùi Quang Trưởng</td>
+            <td>Tổng giám đốc</td>
+            <td>96 Định Công</td>
+            <td>0977354956</td>
+            <td>100000000000</td>
+            <td>
+              <a class="btn btn-primary">Sửa</a>
+            </td>
+            <td>
+              <button class="btn btn-danger">Xóa</button>
+            </td>
+          </tr>
+        </table>
+      </main>
+    </div>
+    <script src="./assets/js/bignumCalculate.js"></script>
+    <script src="./assets/js/fileHandle.js"></script>
+    <script src="./assets/js/managerScript.js"></script>
+  </body>
+</html>
