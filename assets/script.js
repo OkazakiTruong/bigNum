@@ -39,7 +39,7 @@ const addZeroToBegin = (length) => {
 const removeZeroFromBegin = (arr) => {
   if (arr.length > 1) {
     let i = 0;
-    while(i < arr.length) {
+    while (i < arr.length) {
       if (arr[i] == 0) {
         arr.shift();
       } else {
@@ -167,7 +167,7 @@ const mul = (numArr1, numArr2) => {
     result[i + 1] += Math.floor(result[i] / 10);
     result[i] %= 10;
   }
-  
+
   reverse(numArr1);
   reverse(numArr2);
   result = reverse(result);
@@ -215,12 +215,43 @@ const divInt = (numArr1, numArr2) => {
 // chia 2 so nguyen lon lay du
 const divIntRemain = (numArr1, numArr2) => {
   let divIntN = divInt(numArr1, numArr2);
-  let res = sub(numArr1,mul(divIntN, numArr2));
+  let res = sub(numArr1, mul(divIntN, numArr2));
+  res = res.length != 0 ? res : [0];
   return res;
 }
 
 const div = (numArr1, numArr2) => {
+  let res = [];
+  let divIntN = divInt(numArr1, numArr2);
+  let divRemain = divIntRemain(numArr1, numArr2);
+  res = divIntN;
 
+  if (compare(divRemain, [0]) == 1) {
+    if (compare(divRemain, numArr2) == -1) {
+      divRemain.push(0);
+      res.push('.');
+      while (compare(divRemain, numArr2) == -1) {
+        divRemain.push(0);
+        res.push(0);
+      }
+    }
+
+    let l = 10;
+    while (l >= 1) {
+      let remainDivInt = divInt(divRemain, numArr2);
+      let remainDivRemain = divIntRemain(divRemain, numArr2);
+      res = res.concat(remainDivInt);
+      if (compare(remainDivRemain, [0]) == 0){
+        break;
+      }
+
+      remainDivRemain.push(0);
+      divRemain = remainDivRemain;
+      l--;
+    }
+  }
+
+  return res;
 }
 
 btnAdd.addEventListener("click", () => {
@@ -228,6 +259,13 @@ btnAdd.addEventListener("click", () => {
   const numArr2 = numInput(number2.value);
   resultEle.value = '';
   resultEle.value = add(numArr1, numArr2).join('');
+});
+
+btnMinus.addEventListener("click", () => {
+  const numArr1 = numInput(number1.value);
+  const numArr2 = numInput(number2.value);
+  resultEle.value = '';
+  resultEle.value = sub(numArr1, numArr2).join('');
 });
 
 btnMul.addEventListener("click", () => {
@@ -241,7 +279,7 @@ btnDiv.addEventListener("click", () => {
   const numArr1 = numInput(number1.value);
   const numArr2 = numInput(number2.value);
   resultEle.value = '';
-  resultEle.value = mul(numArr1, numArr2).join('');
+  resultEle.value = div(numArr1, numArr2).join('');
 });
 
-console.log(divIntRemain([1,2,3,4,5], [5]));
+console.log(div([1,0], [6]).join(''));
