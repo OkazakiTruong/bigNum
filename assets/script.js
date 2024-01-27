@@ -9,6 +9,12 @@ const resultEle = document.querySelector(".result");
 // return arr from string
 const numInput = (number) => {
   const numArr = [];
+
+  if(number[0] == '-') {
+    numArr.push('-');
+    number = number.substring(1); 
+  }
+
   for (let i = 0; i < number.length; i++) {
     numArr.push(+number[i]);
   }
@@ -16,9 +22,16 @@ const numInput = (number) => {
 };
 
 // return arr to string 
-
 const stringInput = (number) => {
   return number.join("");
+}
+
+const isNegativeN = (numArr) => {
+  if (numArr[0] == '-'){
+    return true;
+  }
+
+  return false;
 }
 
 
@@ -104,10 +117,7 @@ const add = (numArr1, numArr2) => {
     result.push(x);
   }
 
-  if (remain != 0) {
-    result.push(remain);
-  }
-
+  result.push(remain);
   result = reverse(result);
 
   return removeZeroFromBegin(result);
@@ -153,6 +163,19 @@ const sub = (numArr1, numArr2) => {
 
 //Xu ly cho phep nhan
 const mul = (numArr1, numArr2) => {
+  let isNegative = false;
+  if ((isNegativeN(numArr1) && !isNegativeN(numArr2)) || (!isNegativeN(numArr1) && isNegativeN(numArr2))) {
+    isNegative = true;
+  }
+
+  if(isNegativeN(numArr1)) {
+    numArr1.shift();
+  }
+
+  if(isNegativeN(numArr2)) {
+    numArr2.shift();
+  }
+
   let result = addZeroToBegin(numArr1.length + numArr2.length + 1);
   numArr1 = reverse(numArr1);
   numArr2 = reverse(numArr2);
@@ -173,6 +196,9 @@ const mul = (numArr1, numArr2) => {
   result = reverse(result);
 
   result = removeZeroFromBegin(result);
+  if (isNegative) {
+    result.unshift('-');
+  }
   return result;
 };
 
@@ -198,7 +224,6 @@ const divInt = (numArr1, numArr2) => {
   let l = [1];
   let r = numArr1;
   let res = [0];
-
   while (compare(l, r) == -1 || compare(l, r) == 0) {
     let mid = smalldivInt(add(r, l), 2);
 
@@ -221,7 +246,20 @@ const divIntRemain = (numArr1, numArr2) => {
 }
 
 const div = (numArr1, numArr2) => {
-  let res = [];
+  
+  let isNegative = false;
+  if ((isNegativeN(numArr1) && !isNegativeN(numArr2)) || (!isNegativeN(numArr1) && isNegativeN(numArr2))) {
+    isNegative = true;
+  }
+
+  if(isNegativeN(numArr1)) {
+    numArr1.shift();
+  }
+
+  if(isNegativeN(numArr2)) {
+    numArr2.shift();
+  }
+  
   let divIntN = divInt(numArr1, numArr2);
   let divRemain = divIntRemain(numArr1, numArr2);
   res = divIntN;
@@ -251,35 +289,40 @@ const div = (numArr1, numArr2) => {
     }
   }
 
+  if (isNegative) {
+    res.unshift('-');
+  }
+
   return res;
 }
 
 btnAdd.addEventListener("click", () => {
   const numArr1 = numInput(number1.value);
   const numArr2 = numInput(number2.value);
+  console.log(numArr1, numArr2);
   resultEle.value = '';
-  resultEle.value = add(numArr1, numArr2).join('');
+  resultEle.value = stringInput(add(numArr1, numArr2));
 });
 
 btnMinus.addEventListener("click", () => {
   const numArr1 = numInput(number1.value);
   const numArr2 = numInput(number2.value);
   resultEle.value = '';
-  resultEle.value = sub(numArr1, numArr2).join('');
+  resultEle.value = stringInput(sub(numArr1, numArr2));
 });
 
 btnMul.addEventListener("click", () => {
   const numArr1 = numInput(number1.value);
   const numArr2 = numInput(number2.value);
   resultEle.value = '';
-  resultEle.value = mul(numArr1, numArr2).join('');
+  resultEle.value = stringInput(mul(numArr1, numArr2));
 });
 
 btnDiv.addEventListener("click", () => {
   const numArr1 = numInput(number1.value);
   const numArr2 = numInput(number2.value);
   resultEle.value = '';
-  resultEle.value = div(numArr1, numArr2).join('');
+  resultEle.value = stringInput(div(numArr1, numArr2));
 });
 
-console.log(div([1,0], [6]).join(''));
+console.log(add([7,8,9], [1,2,3]))
