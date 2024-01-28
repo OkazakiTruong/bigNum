@@ -1,5 +1,5 @@
 if (!localStorage.getItem("isEdit")) {
-  window.location.replace("../managerOfficer.html");
+  window.location.replace("/managerOfficer.html");
 }
 const officerName = document.querySelector(".officer-name");
 const officerPosition = document.querySelector(".officer-position");
@@ -35,5 +35,5 @@ btnSave.addEventListener("click", () => {
   });
   localStorage.setItem("editSuccess", true);
   localStorage.setItem("data", JSON.stringify(listOfficers));
-  window.location.replace("../managerOfficer.html");
+  window.location.replace("./managerOfficer.html");
 });
