@@ -1,5 +1,5 @@
 if (!localStorage.getItem("isEdit")) {
-  window.location.replace(MANAGER_OFFICER_LINK);
+  window.location.replace("../managerOfficer.html");
 }
 const officerName = document.querySelector(".officer-name");
 const officerPosition = document.querySelector(".officer-position");

@@ -1,0 +1,1 @@
+const managerOfficerLink = `/managerOfficer.html`;
