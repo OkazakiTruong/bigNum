@@ -1,0 +1,39 @@
+input[type="file"] {
+  display: none;
+}
+.input-custom {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.input-custom:hover {
+  background-color: #ccc;
+}
+.table-officer {
+  margin: 20px 0;
+}
+
+.add-new-btn {
+  width: fit-content;
+  display: block;
+  margin-top: 20px;
+}
+.table-officer:has(div.no-data) {
+  border: none;
+}
+.no-data {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.result-container {
+  word-wrap: break-word;
+  font-size: 20px;
+  font-weight: 600;
+}
+.result-container span {
+  font-size: 16px;
+  font-weight: 300;
+}

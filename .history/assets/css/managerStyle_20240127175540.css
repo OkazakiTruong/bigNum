@@ -1,0 +1,21 @@
+input[type="file"] {
+  display: none;
+}
+.input-custom {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.input-custom:hover {
+  background-color: #ccc;
+}
+.table-officer {
+  margin: 20px 0;
+}
+
+.add-new-btn {
+  width: fit-content;
+  display: block;
+  margin-top: 20px;
+}
