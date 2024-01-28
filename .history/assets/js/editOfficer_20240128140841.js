@@ -19,7 +19,7 @@ officerPhone.value = listOfficers[index].Phone;
 officerSalary.value = listOfficers[index].Salary;
 
 btnCancel.addEventListener("click", () => {
-  window.location.href = "./managerOfficer.html";
+  window.location.href = "/managerOfficer.html";
 });
 
 btnSave.addEventListener("click", () => {
@@ -35,5 +35,5 @@ btnSave.addEventListener("click", () => {
   });
   localStorage.setItem("editSuccess", true);
   localStorage.setItem("data", JSON.stringify(listOfficers));
-  window.location.replace("./managerOfficer.html");
+  window.location.replace("/managerOfficer.html");
 });

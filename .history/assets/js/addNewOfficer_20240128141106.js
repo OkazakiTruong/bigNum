@@ -32,5 +32,5 @@ btnSave.addEventListener("click", () => {
   // ];
   localStorage.setItem("addSuccess", true);
   localStorage.setItem("data", JSON.stringify(listOfficers));
-  window.location.replace("./managerOfficer.html");
+  window.location.replace("/managerOfficer.html");
 });
