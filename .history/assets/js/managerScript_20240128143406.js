@@ -241,7 +241,6 @@ if (fileList?.length) {
   for (let i = renderStart; i < renderLength; i++) {
     renderTableRows(tableOfficer, fileList[i], i);
   }
-
   renderPagination(pagination(current, totalPage), current);
 } else {
   tableOfficer.innerHTML = `<div class = "no-data">Không có dữ liệu</div>`;

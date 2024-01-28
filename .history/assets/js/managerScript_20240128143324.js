@@ -232,6 +232,7 @@ if (fileList?.length) {
   renderTableHeader(tableOfficer);
   let current = +localStorage.getItem("current_page") || 1;
   const totalPage = Math.ceil(fileList.length / page_limit);
+  renderPagination(pagination(current, totalPage), current);
 
   const renderStart = current > 1 ? (current - 1) * page_limit : 0;
   const renderLength =
@@ -241,8 +242,6 @@ if (fileList?.length) {
   for (let i = renderStart; i < renderLength; i++) {
     renderTableRows(tableOfficer, fileList[i], i);
   }
-
-  renderPagination(pagination(current, totalPage), current);
 } else {
   tableOfficer.innerHTML = `<div class = "no-data">Không có dữ liệu</div>`;
 }
