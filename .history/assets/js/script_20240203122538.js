@@ -26,8 +26,6 @@ btnAdd.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 
@@ -49,8 +47,6 @@ btnMinus.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 
@@ -72,34 +68,15 @@ btnMul.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 
 btnDiv.addEventListener("click", () => {
   if (validateNumber(number1.value) && validateNumber(number2.value)) {
-    console.log("có là 0 không? ", isZero(numInput(number2.value)));
-    if (!isZero(numInput(number2.value))) {
-      const numArr1 = numInput(number1.value);
-      const numArr2 = numInput(number2.value);
-      resultEle.value = "";
-      resultEle.value = stringInput(div(numArr1, numArr2));
-    } else {
-      Toastify({
-        text: "Số bị chia không thể bằng 0!!",
-        duration: 1000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(to right, #ff0b0c, #ff3637)",
-        },
-      }).showToast();
-      number1.value = "";
-      number2.value = "";
-    }
+    const numArr1 = numInput(number1.value);
+    const numArr2 = numInput(number2.value);
+    resultEle.value = "";
+    resultEle.value = stringInput(div(numArr1, numArr2));
   } else {
     Toastify({
       text: "Vui lòng nhập đúng định dạng số!!",
@@ -112,8 +89,6 @@ btnDiv.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 btnClear.addEventListener("click", () => {

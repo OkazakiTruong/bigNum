@@ -27,7 +27,6 @@ btnAdd.addEventListener("click", () => {
       },
     }).showToast();
     number1.value = "";
-    number2.value = "";
   }
 });
 
@@ -49,8 +48,6 @@ btnMinus.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 
@@ -72,8 +69,6 @@ btnMul.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 
@@ -97,8 +92,6 @@ btnDiv.addEventListener("click", () => {
           background: "linear-gradient(to right, #ff0b0c, #ff3637)",
         },
       }).showToast();
-      number1.value = "";
-      number2.value = "";
     }
   } else {
     Toastify({
@@ -112,8 +105,6 @@ btnDiv.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 btnClear.addEventListener("click", () => {

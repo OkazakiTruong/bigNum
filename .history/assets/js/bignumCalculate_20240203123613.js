@@ -82,9 +82,9 @@ const compare = (number1, number2) => {
 
 //Hàm kiểm tra xem 1 số có phải 0 không
 const isZero = (number) => {
-  number = removeZeroFromBegin(number);
-  console.log(number);
-  if (number.length === 0 || (number.length === 1 && number[0] === 0)) {
+  removeZeroFromBegin(number);
+  console.log("number", number.length);
+  if (number.length === 0) {
     return true;
   }
   return false;

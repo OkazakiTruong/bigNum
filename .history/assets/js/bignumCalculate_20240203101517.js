@@ -80,15 +80,6 @@ const compare = (number1, number2) => {
   return 0;
 };
 
-//Hàm kiểm tra xem 1 số có phải 0 không
-const isZero = (number) => {
-  number = removeZeroFromBegin(number);
-  console.log(number);
-  if (number.length === 0 || (number.length === 1 && number[0] === 0)) {
-    return true;
-  }
-  return false;
-};
 // Cong 2 so nguyen lon
 
 const add = (numArr1, numArr2) => {

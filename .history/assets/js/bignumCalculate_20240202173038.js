@@ -59,13 +59,13 @@ const compare = (number1, number2) => {
   number1 = removeZeroFromBegin(number1);
   number2 = removeZeroFromBegin(number2);
 
-  if (number1.length > number2.length) {
-    return 1;
-  }
+  // if (number1.length > number2.length) {
+  //   return 1;
+  // }
 
-  if (number2.length > number1.length) {
-    return -1;
-  }
+  // if (number2.length > number1.length) {
+  //   return -1;
+  // }
 
   for (let i = 0; i < number1.length; i++) {
     if (number1[i] > number2[i]) {
@@ -80,23 +80,9 @@ const compare = (number1, number2) => {
   return 0;
 };
 
-//Hàm kiểm tra xem 1 số có phải 0 không
-const isZero = (number) => {
-  number = removeZeroFromBegin(number);
-  console.log(number);
-  if (number.length === 0 || (number.length === 1 && number[0] === 0)) {
-    return true;
-  }
-  return false;
-};
 // Cong 2 so nguyen lon
 
 const add = (numArr1, numArr2) => {
-  let isAllNegative = isNegativeN(numArr1) && isNegativeN(numArr2);
-  if (isAllNegative) {
-    numArr1.shift("-");
-    numArr2.shift("-");
-  }
   let result = [];
   let max = Math.max(numArr1.length, numArr2.length);
 
@@ -124,11 +110,8 @@ const add = (numArr1, numArr2) => {
 
   result.push(remain);
   result = reverse(result);
-  result = removeZeroFromBegin(result);
-  if (isAllNegative) {
-    result.unshift("-");
-  }
-  return result;
+
+  return removeZeroFromBegin(result);
 };
 
 //Tru 2 so nguyen lon

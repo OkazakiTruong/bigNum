@@ -82,13 +82,20 @@ const compare = (number1, number2) => {
 
 //Hàm kiểm tra xem 1 số có phải 0 không
 const isZero = (number) => {
-  number = removeZeroFromBegin(number);
-  console.log(number);
-  if (number.length === 0 || (number.length === 1 && number[0] === 0)) {
+  let cloneNum = [...number];
+  for (let i = 0; i < number.length - 1; i++) {
+    if (number[i] === 0) {
+      cloneNum.shift("0");
+    } else {
+      return false;
+    }
+  }
+  if (cloneNum[0] === 0) {
     return true;
   }
   return false;
 };
+console.log("Có là 0 không", isZero[(0, 0, 0, 0)]);
 // Cong 2 so nguyen lon
 
 const add = (numArr1, numArr2) => {

@@ -80,27 +80,16 @@ const compare = (number1, number2) => {
   return 0;
 };
 
-//Hàm kiểm tra xem 1 số có phải 0 không
-const isZero = (number) => {
-  number = removeZeroFromBegin(number);
-  console.log(number);
-  if (number.length === 0 || (number.length === 1 && number[0] === 0)) {
-    return true;
-  }
-  return false;
-};
 // Cong 2 so nguyen lon
 
 const add = (numArr1, numArr2) => {
-  let isAllNegative = isNegativeN(numArr1) && isNegativeN(numArr2);
-  if (isAllNegative) {
-    numArr1.shift("-");
-    numArr2.shift("-");
-  }
+  let isNegative = false;
+
   let result = [];
   let max = Math.max(numArr1.length, numArr2.length);
 
   let compareNums = compare(numArr1, numArr2);
+
   let zcount = Math.abs(numArr1.length - numArr2.length);
   if (compareNums == 1) {
     for (let i = 1; i <= zcount; i++) {
@@ -124,15 +113,14 @@ const add = (numArr1, numArr2) => {
 
   result.push(remain);
   result = reverse(result);
-  result = removeZeroFromBegin(result);
-  if (isAllNegative) {
-    result.unshift("-");
-  }
-  return result;
+  isNegative && result.unshift("-");
+
+  return removeZeroFromBegin(result);
 };
 
 //Tru 2 so nguyen lon
 const sub = (numArr1, numArr2) => {
+  // let isNegative = false;
   let result = [];
   let max = Math.max(numArr1.length, numArr2.length);
 

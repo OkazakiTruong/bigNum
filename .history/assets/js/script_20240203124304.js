@@ -112,8 +112,6 @@ btnDiv.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 btnClear.addEventListener("click", () => {

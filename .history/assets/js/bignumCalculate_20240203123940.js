@@ -84,7 +84,7 @@ const compare = (number1, number2) => {
 const isZero = (number) => {
   number = removeZeroFromBegin(number);
   console.log(number);
-  if (number.length === 0 || (number.length === 1 && number[0] === 0)) {
+  if (number.length === 0) {
     return true;
   }
   return false;

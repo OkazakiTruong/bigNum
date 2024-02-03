@@ -26,8 +26,6 @@ btnAdd.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 
@@ -49,8 +47,6 @@ btnMinus.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 
@@ -72,15 +68,12 @@ btnMul.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 
 btnDiv.addEventListener("click", () => {
   if (validateNumber(number1.value) && validateNumber(number2.value)) {
-    console.log("có là 0 không? ", isZero(numInput(number2.value)));
-    if (!isZero(numInput(number2.value))) {
+    if (!isZero(number2.value)) {
       const numArr1 = numInput(number1.value);
       const numArr2 = numInput(number2.value);
       resultEle.value = "";
@@ -97,8 +90,6 @@ btnDiv.addEventListener("click", () => {
           background: "linear-gradient(to right, #ff0b0c, #ff3637)",
         },
       }).showToast();
-      number1.value = "";
-      number2.value = "";
     }
   } else {
     Toastify({
@@ -112,8 +103,6 @@ btnDiv.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    number1.value = "";
-    number2.value = "";
   }
 });
 btnClear.addEventListener("click", () => {
