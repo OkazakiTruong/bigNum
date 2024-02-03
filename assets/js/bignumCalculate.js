@@ -248,6 +248,10 @@ const divIntRemain = (numArr1, numArr2) => {
 };
 
 const div = (numArr1, numArr2) => {
+  if(isZero(numArr1)) {
+    return [0];
+  }
+  
   let isNegative = false;
   if (
     (isNegativeN(numArr1) && !isNegativeN(numArr2)) ||
