@@ -7,7 +7,7 @@
   color: white;
   padding: 40px;
   border-radius: 20px;
-  margin: 20px auto 0;
+  margin: 40px auto 0;
 }
 hr {
   margin-bottom: 20px;
@@ -28,23 +28,14 @@ hr {
   border: none;
 }
 .btn-group {
-  margin-top: 10px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 20px;
 }
-.btn-group-heading {
-  margin-top: 20px;
-  text-align: center;
-}
 .performance-timer {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  column-gap: 10px;
-}
-.performance-timer .timer {
-  color: rgb(221, 144, 0);
-  font-weight: 600;
+  margin-top: 40px;
 }

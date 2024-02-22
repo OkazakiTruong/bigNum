@@ -179,12 +179,11 @@ btnAddStr.addEventListener("click", () => {
     let totalTime = 0;
     for (let i = 0; i < 10; i++) {
       const t1 = performance.now();
-      res = addStr(number1.value, number2.value);
+      addStr(number1.value, number2.value);
       const t2 = performance.now();
       totalTime += t2 - t1;
     }
     resultEle.value = res;
-    timerEle.innerText = totalTime / 10;
   } else {
     Toastify({
       text: "Vui lòng nhập đúng định dạng số!!",

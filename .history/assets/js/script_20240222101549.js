@@ -3,12 +3,6 @@ const btnMinus = document.querySelector(".btn-minus");
 const btnMul = document.querySelector(".btn-mul");
 const btnDiv = document.querySelector(".btn-div");
 const btnClear = document.querySelector(".btn-clear");
-
-const btnAddStr = document.querySelector(".btn-add-str");
-const btnMinusStr = document.querySelector(".btn-minus-str");
-const btnMulStr = document.querySelector(".btn-mul-str");
-const btnDivStr = document.querySelector(".btn-div-str");
-
 const number1 = document.querySelector(".number1");
 const number2 = document.querySelector(".number2");
 const resultEle = document.querySelector(".result");
@@ -171,33 +165,4 @@ btnClear.addEventListener("click", () => {
   number2.value = "";
   resultEle.value = 0;
   timerEle.innerText = "no data";
-});
-
-btnAddStr.addEventListener("click", () => {
-  if (validateNumber(number1.value) && validateNumber(number2.value)) {
-    let res;
-    let totalTime = 0;
-    for (let i = 0; i < 10; i++) {
-      const t1 = performance.now();
-      res = addStr(number1.value, number2.value);
-      const t2 = performance.now();
-      totalTime += t2 - t1;
-    }
-    resultEle.value = res;
-    timerEle.innerText = totalTime / 10;
-  } else {
-    Toastify({
-      text: "Vui lòng nhập đúng định dạng số!!",
-      duration: 1000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #ff0b0c, #ff3637)",
-      },
-    }).showToast();
-    number1.value = "";
-    number2.value = "";
-  }
 });

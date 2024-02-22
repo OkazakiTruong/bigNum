@@ -175,15 +175,20 @@ btnClear.addEventListener("click", () => {
 
 btnAddStr.addEventListener("click", () => {
   if (validateNumber(number1.value) && validateNumber(number2.value)) {
-    let res;
+    const numArr1 = numInput(number1.value);
+    const numArr2 = numInput(number2.value);
+    console.log(numArr1, numArr2);
+    resultEle.value = "";
     let totalTime = 0;
+    let res;
     for (let i = 0; i < 10; i++) {
       const t1 = performance.now();
-      res = addStr(number1.value, number2.value);
+      res = add(numArr1, numArr2);
       const t2 = performance.now();
       totalTime += t2 - t1;
     }
-    resultEle.value = res;
+
+    resultEle.value = stringInput(res);
     timerEle.innerText = totalTime / 10;
   } else {
     Toastify({

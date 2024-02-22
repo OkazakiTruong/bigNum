@@ -3,12 +3,6 @@ const btnMinus = document.querySelector(".btn-minus");
 const btnMul = document.querySelector(".btn-mul");
 const btnDiv = document.querySelector(".btn-div");
 const btnClear = document.querySelector(".btn-clear");
-
-const btnAddStr = document.querySelector(".btn-add-str");
-const btnMinusStr = document.querySelector(".btn-minus-str");
-const btnMulStr = document.querySelector(".btn-mul-str");
-const btnDivStr = document.querySelector(".btn-div-str");
-
 const number1 = document.querySelector(".number1");
 const number2 = document.querySelector(".number2");
 const resultEle = document.querySelector(".result");
@@ -20,17 +14,12 @@ btnAdd.addEventListener("click", () => {
     const numArr2 = numInput(number2.value);
     console.log(numArr1, numArr2);
     resultEle.value = "";
-    let totalTime = 0;
-    let res;
-    for (let i = 0; i < 10; i++) {
-      const t1 = performance.now();
-      res = add(numArr1, numArr2);
-      const t2 = performance.now();
-      totalTime += t2 - t1;
-    }
-
-    resultEle.value = stringInput(res);
-    timerEle.innerText = totalTime / 10;
+    const t1 = performance.now();
+    resultEle.value = stringInput(add(numArr1, numArr2));
+    const t2 = performance.now();
+    console.log(t1);
+    console.log(t2);
+    timerEle.innerText = t2 - t1;
   } else {
     Toastify({
       text: "Vui lòng nhập đúng định dạng số!!",
@@ -53,19 +42,10 @@ btnMinus.addEventListener("click", () => {
     const numArr1 = numInput(number1.value);
     const numArr2 = numInput(number2.value);
     resultEle.value = "";
-    let totalTime = 0;
-    let res;
-    for (let i = 0; i < 10; i++) {
-      const t1 = performance.now();
-      res = sub(numArr1, numArr2);
-      const t2 = performance.now();
-      totalTime += t2 - t1;
-    }
-    if (!res.length) {
-      res.push(0);
-    }
-    resultEle.value = stringInput(res);
-    timerEle.innerText = totalTime / 10;
+    const t1 = performance.now();
+    resultEle.value = stringInput(sub(numArr1, numArr2));
+    const t2 = performance.now();
+    timerEle.innerText = t2 - t1;
   } else {
     Toastify({
       text: "Vui lòng nhập đúng định dạng số!!",
@@ -88,19 +68,10 @@ btnMul.addEventListener("click", () => {
     const numArr1 = numInput(number1.value);
     const numArr2 = numInput(number2.value);
     resultEle.value = "";
-    let totalTime = 0;
-    let res;
-    for (let i = 0; i < 10; i++) {
-      const t1 = performance.now();
-      res = mul(numArr1, numArr2);
-      const t2 = performance.now();
-      totalTime += t2 - t1;
-    }
-    if (!res.length) {
-      res.push(0);
-    }
-    resultEle.value = stringInput(res);
-    timerEle.innerText = totalTime / 10;
+    const t1 = performance.now();
+    resultEle.value = stringInput(mul(numArr1, numArr2));
+    const t2 = performance.now();
+    timerEle.innerText = t2 - t1;
   } else {
     Toastify({
       text: "Vui lòng nhập đúng định dạng số!!",
@@ -125,16 +96,10 @@ btnDiv.addEventListener("click", () => {
       const numArr1 = numInput(number1.value);
       const numArr2 = numInput(number2.value);
       resultEle.value = "";
-      let totalTime = 0;
-      let res;
-      for (let i = 0; i < 10; i++) {
-        const t1 = performance.now();
-        res = div(numArr1, numArr2);
-        const t2 = performance.now();
-        totalTime += t2 - t1;
-      }
-      resultEle.value = stringInput(res);
-      timerEle.innerText = totalTime / 10;
+      const t1 = performance.now();
+      resultEle.value = stringInput(div(numArr1, numArr2));
+      const t2 = performance.now();
+      timerEle.innerText = t2 - t1;
     } else {
       Toastify({
         text: "Số bị chia không thể bằng 0!!",
@@ -171,33 +136,4 @@ btnClear.addEventListener("click", () => {
   number2.value = "";
   resultEle.value = 0;
   timerEle.innerText = "no data";
-});
-
-btnAddStr.addEventListener("click", () => {
-  if (validateNumber(number1.value) && validateNumber(number2.value)) {
-    let res;
-    let totalTime = 0;
-    for (let i = 0; i < 10; i++) {
-      const t1 = performance.now();
-      res = addStr(number1.value, number2.value);
-      const t2 = performance.now();
-      totalTime += t2 - t1;
-    }
-    resultEle.value = res;
-    timerEle.innerText = totalTime / 10;
-  } else {
-    Toastify({
-      text: "Vui lòng nhập đúng định dạng số!!",
-      duration: 1000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #ff0b0c, #ff3637)",
-      },
-    }).showToast();
-    number1.value = "";
-    number2.value = "";
-  }
 });

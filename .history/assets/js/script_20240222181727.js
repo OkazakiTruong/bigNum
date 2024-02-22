@@ -184,7 +184,6 @@ btnAddStr.addEventListener("click", () => {
       totalTime += t2 - t1;
     }
     resultEle.value = res;
-    timerEle.innerText = totalTime / 10;
   } else {
     Toastify({
       text: "Vui lòng nhập đúng định dạng số!!",

@@ -34,10 +34,6 @@ hr {
   align-items: center;
   column-gap: 20px;
 }
-.btn-group-heading {
-  margin-top: 20px;
-  text-align: center;
-}
 .performance-timer {
   display: flex;
   justify-content: center;
