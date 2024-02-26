@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính toán số nguyên lớn</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="root">
+      <header class="header">
+        <nav class="nav">
+          <a class="active" href="./index.html">TÍNH SỐ NGUYÊN LỚN</a>
+          <a href="./managerOfficer.html">QUẢN LÝ NHÂN SỰ</a>
+        </nav>
+      </header>
+      <div class="performance-timer">
+        Thời gian thực hiện: <span class="timer"> no data</span>
+      </div>
+      <div class="body">
+        <div class="calculator-wrapper">
+          <div class="input-group">
+            <label for="">Số thứ nhất:</label>
+            <input
+              type="text"
+              placeholder="Nhập vào số thứ nhất"
+              class="number1"
+            />
+          </div>
+          <div class="input-group">
+            <label for="">Số thứ hai:</label>
+            <input
+              type="text"
+              placeholder="Nhập vào số thứ nhất"
+              class="number2"
+            />
+          </div>
+          <hr />
+          <div class="input-group">
+            <label for="">Kết quả: </label>
+            <input type="text" value="0" class="result" readonly />
+          </div>
+          <div class="btn-group">
+            <button class="btn-add btn btn-secondary">Cộng +</button>
+            <button class="btn-minus btn btn-secondary">Trừ -</button>
+            <button class="btn-mul btn btn-secondary">Nhân *</button>
+            <button class="btn-div btn btn-secondary">Chia /</button>
+            <button class="btn-clear btn btn-danger">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="./assets/js/bignumCalculate.js"></script>
+    <script src="./assets/js/validate.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

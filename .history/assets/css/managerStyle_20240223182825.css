@@ -1,0 +1,76 @@
+input[type="file"] {
+  display: none;
+}
+th {
+  padding: 6px;
+  background-color: #eeeeee;
+  color: #2b2b2b;
+}
+.input-custom {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.input-custom:hover {
+  background-color: #ccc;
+}
+.table-officer {
+  margin: 20px 0;
+}
+
+.add-new-btn {
+  width: fit-content;
+  display: block;
+  margin-top: 20px;
+}
+.table-officer:has(div.no-data) {
+  border: none;
+}
+.no-data {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.result-container {
+  word-wrap: break-word;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.result-container span {
+  font-size: 27px;
+  font-weight: 300;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin: 20px 0px;
+}
+.pagination-item {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.pagination-item:hover {
+  background-color: #eeeeee;
+}
+.pagination-item.active {
+  background-color: #4747fc;
+  color: white;
+}
+.pagination-item.active:hover {
+  background-color: #6060ff;
+  color: white;
+}
+.btn-group {
+  margin-bottom: 20px;
+}
