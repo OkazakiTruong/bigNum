@@ -133,6 +133,8 @@ const add = (numArr1, numArr2) => {
 
 //Tru 2 so nguyen lon
 const sub = (numArr1, numArr2) => {
+  let ok = false;
+
   let result = [];
   let max = Math.max(numArr1.length, numArr2.length);
 
@@ -148,6 +150,8 @@ const sub = (numArr1, numArr2) => {
     for (let i = 1; i <= zcount; i++) {
       numArr1.unshift(0);
     }
+    numArr1 = ((numArr2) => numArr2)(numArr2, (numArr2 = numArr1));
+    ok = true;
   }
 
   let remain = 0;
@@ -162,10 +166,13 @@ const sub = (numArr1, numArr2) => {
   }
 
   result = reverse(result);
+  result = removeZeroFromBegin(result);
+  if (ok == true) {
+    result.unshift("-");
+  }
 
-  return removeZeroFromBegin(result);
+  return result;
 };
-
 //Xu ly cho phep nhan
 const mul = (numArr1, numArr2) => {
   let isNegative = false;
@@ -203,6 +210,7 @@ const mul = (numArr1, numArr2) => {
   if (isNegative) {
     result.unshift("-");
   }
+  console.log("result", result);
   return result;
 };
 
@@ -248,6 +256,10 @@ const divIntRemain = (numArr1, numArr2) => {
 };
 
 const div = (numArr1, numArr2) => {
+  if(isZero(numArr1)) {
+    return [0];
+  }
+  
   let isNegative = false;
   if (
     (isNegativeN(numArr1) && !isNegativeN(numArr2)) ||
