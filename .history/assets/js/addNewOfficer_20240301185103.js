@@ -54,7 +54,6 @@ btnSave.addEventListener("click", () => {
     Address: officerAddress.value,
     Phone: officerPhone.value,
     Salary: officerSalary.value,
-    Month: officerMonth.value,
   });
   localStorage.setItem("addSuccess", true);
   localStorage.setItem("data", JSON.stringify(listOfficers));

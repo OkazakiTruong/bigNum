@@ -13,6 +13,7 @@ btnCancel.addEventListener("click", () => {
 
 btnSave.addEventListener("click", () => {
   let listOfficers = JSON.parse(localStorage.getItem("data")) || [];
+
   if (
     officerName.value === "" ||
     officerPosition.value === "" ||
@@ -34,27 +35,12 @@ btnSave.addEventListener("click", () => {
     }).showToast();
     return 0;
   }
-  if (!validatePhoneNumber(officerPhone.value)) {
-    Toastify({
-      text: "Số điện thoại không chính xác",
-      duration: 1000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #ff0b0c, #ff3637)",
-      },
-    }).showToast();
-    return 0;
-  }
   listOfficers.unshift({
     Name: officerName.value,
     Position: officerPosition.value,
     Address: officerAddress.value,
     Phone: officerPhone.value,
     Salary: officerSalary.value,
-    Month: officerMonth.value,
   });
   localStorage.setItem("addSuccess", true);
   localStorage.setItem("data", JSON.stringify(listOfficers));

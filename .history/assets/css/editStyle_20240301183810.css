@@ -20,7 +20,6 @@
   box-shadow: 0 0 6px 1px #3434ff;
 }
 
-#input-month {
+.input-month {
   padding: 10px;
-  border-radius: 10px;
 }

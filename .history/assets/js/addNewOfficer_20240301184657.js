@@ -13,6 +13,7 @@ btnCancel.addEventListener("click", () => {
 
 btnSave.addEventListener("click", () => {
   let listOfficers = JSON.parse(localStorage.getItem("data")) || [];
+
   if (
     officerName.value === "" ||
     officerPosition.value === "" ||
@@ -23,20 +24,6 @@ btnSave.addEventListener("click", () => {
   ) {
     Toastify({
       text: "Không được bỏ trống!!!",
-      duration: 1000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #ff0b0c, #ff3637)",
-      },
-    }).showToast();
-    return 0;
-  }
-  if (!validatePhoneNumber(officerPhone.value)) {
-    Toastify({
-      text: "Số điện thoại không chính xác",
       duration: 1000,
       close: true,
       gravity: "top", // `top` or `bottom`

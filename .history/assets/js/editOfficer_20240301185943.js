@@ -18,47 +18,12 @@ officerPosition.value = listOfficers[index].Position;
 officerAddress.value = listOfficers[index].Address;
 officerPhone.value = listOfficers[index].Phone;
 officerSalary.value = listOfficers[index].Salary;
-officerMonth.value = listOfficers[index].Month;
 
 btnCancel.addEventListener("click", () => {
   window.location.href = MANAGER_OFFICER_LINK;
 });
 
 btnSave.addEventListener("click", () => {
-  if (
-    officerName.value === "" ||
-    officerPosition.value === "" ||
-    officerAddress.value === "" ||
-    officerPhone.value === "" ||
-    officerSalary.value === ""
-  ) {
-    Toastify({
-      text: "Không được bỏ trống!!!",
-      duration: 1000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #ff0b0c, #ff3637)",
-      },
-    }).showToast();
-    return 0;
-  }
-  if (!validatePhoneNumber(officerPhone.value)) {
-    Toastify({
-      text: "Số điện thoại không chính xác",
-      duration: 1000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #ff0b0c, #ff3637)",
-      },
-    }).showToast();
-    return 0;
-  }
   listOfficers = listOfficers.map((officer, i) => {
     if (i === index) {
       officer.Name = officerName.value;
@@ -66,7 +31,6 @@ btnSave.addEventListener("click", () => {
       officer.Address = officerAddress.value;
       officer.Phone = officerPhone.value;
       officer.Salary = officerSalary.value;
-      officer.Month = officerMonth.value;
     }
     return officer;
   });

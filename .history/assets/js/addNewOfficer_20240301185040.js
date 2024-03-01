@@ -36,7 +36,7 @@ btnSave.addEventListener("click", () => {
   }
   if (!validatePhoneNumber(officerPhone.value)) {
     Toastify({
-      text: "Số điện thoại không chính xác",
+      text: "Vui lòng nhập đúng định dạng điện thoại",
       duration: 1000,
       close: true,
       gravity: "top", // `top` or `bottom`
@@ -46,7 +46,6 @@ btnSave.addEventListener("click", () => {
         background: "linear-gradient(to right, #ff0b0c, #ff3637)",
       },
     }).showToast();
-    return 0;
   }
   listOfficers.unshift({
     Name: officerName.value,
@@ -54,7 +53,6 @@ btnSave.addEventListener("click", () => {
     Address: officerAddress.value,
     Phone: officerPhone.value,
     Salary: officerSalary.value,
-    Month: officerMonth.value,
   });
   localStorage.setItem("addSuccess", true);
   localStorage.setItem("data", JSON.stringify(listOfficers));
