@@ -278,7 +278,8 @@ const div = (numArr1, numArr2) => {
 
   let divIntN = divInt(numArr1, numArr2);
   let divRemain = divIntRemain(numArr1, numArr2);
-  res = divIntN;
+  let res = divIntN;
+  let l = 10;
 
   if (compare(divRemain, [0]) == 1) {
     if (compare(divRemain, numArr2) == -1) {
@@ -287,10 +288,10 @@ const div = (numArr1, numArr2) => {
       while (compare(divRemain, numArr2) == -1) {
         divRemain.push(0);
         res.push(0);
+        l--;
       }
     }
 
-    let l = 10;
     while (l >= 1) {
       let remainDivInt = divInt(divRemain, numArr2);
       let remainDivRemain = divIntRemain(divRemain, numArr2);
