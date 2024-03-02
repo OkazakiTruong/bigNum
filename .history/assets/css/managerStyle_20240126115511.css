@@ -1,0 +1,11 @@
+input[type="file"] {
+  display: none;
+}
+.input-custom {
+  padding: 8px;
+  background-color: #ccc;
+  border-radius: 4px;
+}
+.table-officer {
+  margin: 20px 0;
+}

@@ -1,0 +1,46 @@
+/* css for body */
+/* css for calculator */
+.calculator-wrapper {
+  width: fit-content;
+  padding: 10px;
+  background-color: #5b9092;
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  margin: 20px auto 0;
+}
+hr {
+  margin-bottom: 20px;
+}
+.calculator-wrapper .input-group {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+}
+.calculator-wrapper .input-group input {
+  padding: 10px;
+  font-size: 16px;
+  width: 500px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+.btn-group {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+.performance-timer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  column-gap: 10px;
+}
+.performance-timer .timer {
+  color: rgb(221, 144, 0);
+  font-weight: 600;
+}
